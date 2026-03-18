@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V14 Trading App</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+<style>
+body{background:#0b0f1a;color:white;font-family:sans-serif}
+.card{background:#111827;margin:10px;padding:10px;border-radius:10px}
+button{padding:10px;margin:5px;border-radius:10px}
+input{padding:10px;margin:5px;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Login</h2>
+<input id="user" placeholder="Username">
+<button onclick="login()">Login</button>
+</div>
+
+<div id="app" style="display:none">
+
+<div class="card">
+💰 Balance: ₹<span id="bal"></span>  
+</div>
+
+<div class="card">
+<select id="stock">
+<option value="AAPL">Apple</option>
+<option value="TSLA">Tesla</option>
+<option value="AMZN">Amazon</option>
+<option value="GOOGL">Google</option>
+</select>
+
+<button onclick="buy()">Buy</button>
+<button onclick="sell()">Sell</button>
+
+<canvas id="chart"></canvas>
+</div>
+
+<div class="card">
+<h3>Portfolio</h3>
+<div id="portfolio"></div>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
